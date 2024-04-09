@@ -1,0 +1,238 @@
+body {
+  min-height: 100vh;
+  background-color: #080607;
+}
+
+#group-wifi, #group-hearth {
+  fill: #413544;
+}
+
+#wrapper {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+#svg {
+  width: 200px;
+  height: 200px;
+  display: block;
+  position: relative;
+}
+
+#hearth-3 {
+  z-index: 0;
+}
+
+.active #group-hearth [id^=hearth] {
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  fill: #00a529;
+}
+.active #group-hearth #hearth-0 {
+  -webkit-animation-name: pulse1;
+          animation-name: pulse1;
+}
+.active #group-hearth #hearth-1 {
+  -webkit-animation-name: pulse2;
+          animation-name: pulse2;
+}
+.active #group-hearth #hearth-2 {
+  -webkit-animation-name: pulse3;
+          animation-name: pulse3;
+}
+.active #group-hearth #hearth-3 {
+  -webkit-animation-name: pulse4;
+          animation-name: pulse4;
+}
+
+@-webkit-keyframes pulse1 {
+  0% {
+    fill: #00a529;
+  }
+  1% {
+    fill: #00a529;
+  }
+  100% {
+    fill: #00a529;
+  }
+}
+
+@keyframes pulse1 {
+  0% {
+    fill: #00a529;
+  }
+  1% {
+    fill: #00a529;
+  }
+  100% {
+    fill: #00a529;
+  }
+}
+@-webkit-keyframes pulse2 {
+  0% {
+    fill: #413544;
+  }
+  10% {
+    fill: #413544;
+  }
+  11% {
+    fill: #e40078;
+  }
+  100% {
+    fill: #e40078;
+  }
+}
+@keyframes pulse2 {
+  0% {
+    fill: #413544;
+  }
+  10% {
+    fill: #413544;
+  }
+  11% {
+    fill: #00a529;
+  }
+  100% {
+    fill: #00a529;
+  }
+}
+@-webkit-keyframes pulse3 {
+  0% {
+    fill: #413544;
+  }
+  20% {
+    fill: #413544;
+  }
+  21% {
+    fill: #00a529;
+  }
+  100% {
+    fill: #00a529;
+  }
+}
+@keyframes pulse3 {
+  0% {
+    fill: #413544;
+  }
+  20% {
+    fill: #413544;
+  }
+  21% {
+    fill: #00a529;
+  }
+  100% {
+    fill: #00a529;
+  }
+}
+@-webkit-keyframes pulse4 {
+  0% {
+    fill: #413544;
+  }
+  55% {
+    fill: #413544;
+  }
+  56% {
+    fill: #00a529;
+  }
+  100% {
+    fill: #00a529;
+  }
+}
+@keyframes pulse4 {
+  0% {
+    fill: #413544;
+  }
+  55% {
+    fill: #413544;
+  }
+  56% {
+    fill: #00a529;
+  }
+  100% {
+    fill: #00a529;
+  }
+}
+/*TOGGLE*/
+.toggle-wrapper {
+  height: 40px;
+}
+
+.toggle-button-cover {
+  display: table-cell;
+  position: relative;
+  width: 200px;
+  box-sizing: border-box;
+}
+
+.button-cover, .knobs {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.button {
+  position: relative;
+  top: 50%;
+  width: 74px;
+  height: 36px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.button.r {
+  border-radius: 100px;
+}
+
+.checkbox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.knobs {
+  z-index: 2;
+  background-color: #413544;
+}
+
+#button-3 .knobs:before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 20px;
+  height: 10px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  padding: 9px 4px;
+  background-color: #261f27;
+  border-radius: 50%;
+  transition: 0.3s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+}
+
+#button-3 .checkbox:active + .knobs:before {
+  width: 46px;
+  border-radius: 100px;
+}
+
+#button-3 .checkbox:checked:active + .knobs:before {
+  margin-left: -26px;
+}
+
+#button-3 .checkbox:checked + .knobs:before {
+  content: "";
+  left: 42px;
+  background-color: #00a529;
+}
